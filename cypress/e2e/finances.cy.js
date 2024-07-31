@@ -16,10 +16,7 @@ describe("Transações", () => {
     criarTransacao("Cartão de crédito", 473);
     criarTransacao("Gorjeta", -20);
 
-    cy.contains(".description", "Conta de luz")
-    .parent()
-    .find("img")
-    .click();
+    cy.contains(".description", "Conta de luz").parent().find("img").click();
   });
 });
 
@@ -32,5 +29,5 @@ function criarTransacao(description, amount) {
 
   cy.contains("button", "Salvar").click();
 
-  cy.contains(".description", description).should("have.text", description)
+  cy.contains(".description", description).should("have.text", description);
 }
